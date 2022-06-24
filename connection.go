@@ -89,8 +89,13 @@ func (c *Conn) ExecContext(ctx context.Context, q string, args []driver.NamedVal
 
 // Begin is not supported
 func (c *Conn) Begin() (driver.Tx, error) {
-	return nil, ErrNotSupported
+	return &tx{}, nil
 }
+
+type tx struct{}
+
+func (t *tx) Commit() error   { return nil }
+func (t *tx) Rollback() error { return nil }
 
 // OpenSession ensure opened session
 func (c *Conn) OpenSession(ctx context.Context) (*hive.Session, error) {
