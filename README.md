@@ -1,6 +1,7 @@
+### NOTE: As the original driver started releasing its v1, this fork became pointless.
 # Go Databricks SQL Driver
 
-Databricks SQL driver for Go's [database/sql](https://golang.org/pkg/database/sql) package.
+A fork of the Databricks SQL driver for Go's [database/sql](https://golang.org/pkg/database/sql) package.
 
 ## Usage
 
